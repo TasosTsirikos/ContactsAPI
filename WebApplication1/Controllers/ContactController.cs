@@ -31,14 +31,10 @@ namespace WebApplication1.Controllers
                 select c
             ).ToListAsync();
 
-            if (contacts == null)
-            {
-                return NotFound();
-            }
             return Ok(contacts);
         }
 
-        // Create Contact
+        // Create contact
         [HttpPost]
         public async Task<IActionResult> Create(CreateContactDTO dto)
         {
