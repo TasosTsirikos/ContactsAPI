@@ -1,15 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebApplication1.Models;
+using ContactsAPI.Models;
 
-namespace WebApplication1.Data
+namespace ContactsAPI.Data
 {
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-
         }
 
         public DbSet<Contact> Contacts { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Contact>()
+                .ToTable("Contact");
+        }
     }
 }

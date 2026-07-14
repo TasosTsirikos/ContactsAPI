@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.DTOs
+﻿namespace ContactsAPI.DTOs
 {
     public class CreateContactDTO
     {

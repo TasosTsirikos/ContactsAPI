@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using WebApplication1.Data;
-using WebApplication1.DTOs;
-using WebApplication1.Models;
+using ContactsAPI.Data;
+using ContactsAPI.DTOs;
+using ContactsAPI.Models;
 
-namespace WebApplication1.Controllers
+namespace ContactsAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    // Route: /contact
+    [Route("ContactList")]
+    // Route: /ContactList
     public class ContactController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -22,8 +22,8 @@ namespace WebApplication1.Controllers
             _context = context;
         }
 
-        // Get all contacts
-        [HttpGet]
+        // GetAllContacts
+        [HttpGet("GetAllContacts")]
         public async Task<IActionResult> Get()
         {
             var contacts = await (
@@ -34,8 +34,8 @@ namespace WebApplication1.Controllers
             return Ok(contacts);
         }
 
-        // Create contact
-        [HttpPost]
+        // CreateContact
+        [HttpPost("CreateContact")]
         public async Task<IActionResult> Create(CreateContactDTO dto)
         {
             if(dto.FirstName == null || dto.LastName == null || dto.Phone == null)

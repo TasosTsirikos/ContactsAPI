@@ -1,4 +1,4 @@
-namespace WebApplication1.Models
+namespace ContactsAPI.Models
 {
     public class Contact
     {
