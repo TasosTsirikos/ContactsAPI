@@ -96,7 +96,7 @@ namespace ContactsAPI.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return Ok();
+            return Ok(contact);
         }
     }
 }
