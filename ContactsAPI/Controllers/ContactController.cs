@@ -53,8 +53,50 @@ namespace ContactsAPI.Controllers
 
                 await _context.Contacts.AddAsync(contact);
                 await _context.SaveChangesAsync();
-                return Ok(contact);
+                return Ok();
             }
+        }
+
+        // DeleteContact
+        [HttpDelete("DeleteContact/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var contact = await _context.Contacts.FindAsync(id);
+
+            if (contact == null)
+            {
+                return NotFound();
+            }
+            
+            _context.Contacts.Remove(contact);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        // UpdateContact
+        [HttpPut("UpdateContact/{id}")]
+        public async Task<IActionResult> Update(int id, ContactDTO dto)
+        {
+            var contact = await _context.Contacts.FindAsync(id);
+
+            if (contact == null)
+            {
+                return NotFound();
+            }
+
+            if (dto.FirstName == null || dto.LastName == null || dto.Phone == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                contact.FirstName = dto.FirstName;
+                contact.LastName = dto.LastName;
+                contact.Phone = dto.Phone;
+            }
+
+            await _context.SaveChangesAsync();
+            return Ok();
         }
     }
 }
