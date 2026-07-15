@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using ContactsAPI.Data;
 using ContactsAPI.DTOs;
 using ContactsAPI.Models;
