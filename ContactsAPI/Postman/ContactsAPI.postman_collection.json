@@ -56,6 +56,57 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "DeleteContact",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:44395/ContactList/DeleteContact/3",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "44395",
+          "path": [
+            "ContactList",
+            "DeleteContact",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UpdateContact",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Νάσος\",\r\n  \"lastName\": \"Ζήσημόπουλος\",\r\n  \"phone\": \"6988343434\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:44395/ContactList/UpdateContact/4",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "44395",
+          "path": [
+            "ContactList",
+            "UpdateContact",
+            "4"
+          ]
+        }
+      },
+      "response": []
     }
   ]
 }
