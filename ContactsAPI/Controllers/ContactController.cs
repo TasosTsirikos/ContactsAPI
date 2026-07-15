@@ -36,7 +36,7 @@ namespace ContactsAPI.Controllers
 
         // CreateContact
         [HttpPost("CreateContact")]
-        public async Task<IActionResult> Create(CreateContactDTO dto)
+        public async Task<IActionResult> Create(ContactDTO dto)
         {
             if(dto.FirstName == null || dto.LastName == null || dto.Phone == null)
             {

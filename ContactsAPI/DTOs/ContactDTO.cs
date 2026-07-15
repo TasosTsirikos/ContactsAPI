@@ -1,6 +1,6 @@
 ﻿namespace ContactsAPI.DTOs
 {
-    public class CreateContactDTO
+    public class ContactDTO
     {
         public string? FirstName { get; set; }
 
