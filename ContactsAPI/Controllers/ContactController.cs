@@ -53,7 +53,7 @@ namespace ContactsAPI.Controllers
 
                 await _context.Contacts.AddAsync(contact);
                 await _context.SaveChangesAsync();
-                return Ok();
+                return Ok(contact);
             }
         }
 
